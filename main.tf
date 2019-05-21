@@ -298,5 +298,5 @@ resource "azurerm_network_interface" "vm" {
 resource "azurerm_network_interface_application_security_group_association" "test" {
   network_interface_id          = "${azurerm_network_interface.vm.id}"
   ip_configuration_name         = "${azurerm_network_interface.vm.ip_configuration.name}"
-  application_security_group_id = "${azurerm_application_security_group.test.id}"
+  application_security_group_ids = "${var.application_security_group_ids}"
 }
