@@ -110,10 +110,10 @@ resource "azurerm_virtual_machine" "vm-linux-with-datadisk" {
   }
 
   storage_data_disk {
-    name              = "datadisk-${var.vm_hostname}-${count.index}"
+    name              = "datadisc-${var.vm_hostname}-${count.index}"
     create_option     = "Empty"
     lun               = 0
-    disk_size_gb      = "${var.data_disk_size_gb}"
+    disk_size_gb      = "${var.data_disc_size_gb}"
     managed_disk_type = "${var.data_sa_type}"
   }
 
